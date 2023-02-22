@@ -14,7 +14,12 @@ int main()
 	string highestName = student[0].getName();
 	int highestGrade = student[0].getGrade();
 
-
+	ofstream outfile("Report.txt");
+	if (!outfile.is_open())
+	{
+		cout << "File not fount" << endl;
+	}
+	
 	for (int i = 0; i <= 4; i++)
 	{
 		do {
@@ -34,6 +39,7 @@ int main()
 			highestName = student[i].getName();
 			highestGrade = student[i].getGrade();
 		}
+		outfile << name << "\t\t | \t\t" << grade << "%" << endl;
 		system("cls");
 	}
 
